@@ -11,12 +11,12 @@ This plan covers only the reduced assignment: a Python game engine, Flask REST A
 
 ## Phase 2 — Game engine and word lists
 
-- [ ] Add `words/easy.txt`, `words/medium.txt`, and `words/hard.txt` with alphabetic words appropriate to Easy, Medium, and Hard; record their source/counts in `README.md`.
-- [ ] Implement an interface-independent engine in `game.py` and word loading/selection in `word_manager.py`.
-- [ ] Support random selection by difficulty; single-letter validation; duplicate handling; correct/incorrect guesses; pattern, remaining incorrect guesses, and `playing`/`won`/`lost` status.
-- [ ] Prevent guesses after a completed game and expose the answer only after completion. Keep the hidden word out of active client-safe state.
-- [ ] Add and run engine/word tests in `tests/test_game.py` and `tests/test_word_manager.py`: all difficulties, valid/correct/incorrect/repeated/invalid guesses, win, loss, and word-list validation.
-- [ ] Review the test results and engine behavior; commit only after they pass.
+- [x] Add `words/easy.txt`, `words/medium.txt`, and `words/hard.txt` with alphabetic words appropriate to Easy, Medium, and Hard; record their source/counts in `README.md`.
+- [x] Implement an interface-independent engine in `game.py` and word loading/selection in `word_manager.py`.
+- [x] Support random selection by difficulty; single-letter validation; duplicate handling; correct/incorrect guesses; pattern, remaining incorrect guesses, and `playing`/`won`/`lost` status.
+- [x] Prevent guesses after a completed game and expose the answer only after completion. Keep the hidden word out of active client-safe state.
+- [x] Add and run engine/word tests in `tests/test_game.py` and `tests/test_word_manager.py`: all difficulties, valid/correct/incorrect/repeated/invalid guesses, win, loss, and word-list validation.
+- [x] Review the test results and engine behavior; commit only after they pass.
 
 ## Phase 3 — Flask API
 
@@ -59,6 +59,6 @@ This plan covers only the reduced assignment: a Python game engine, Flask REST A
 
 ## Current blockers / decisions before implementation
 
-- [ ] Supply or choose original word-list content for `words/easy.txt`, `words/medium.txt`, and `words/hard.txt`; none is currently present in this project.
+- [x] Supply or choose original word-list content for `words/easy.txt`, `words/medium.txt`, and `words/hard.txt`; none is currently present in this project.
 - [ ] Choose the GitHub repository name/visibility and create/sign in to the GitHub account if needed.
 - [ ] Choose a Render account/service name and retain the public URL once created.
