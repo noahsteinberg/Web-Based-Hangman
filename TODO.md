@@ -38,9 +38,9 @@ This plan covers only the reduced assignment: a Python game engine, Flask REST A
 
 ## Phase 5 — Complete testing and documentation
 
-- [ ] Run the full automated test suite and fix failures; repeat the local browser checks after fixes.
-- [ ] Update `README.md` with setup, local run/test commands, browser use, API examples, project structure, and known limitations.
-- [ ] Verify a fresh local setup from the README and confirm that the UI/API behavior meets every reduced assignment requirement; commit the verified result.
+- [x] Run the full automated test suite and fix failures; repeat the local browser checks after fixes.
+- [x] Update `README.md` with setup, local run/test commands, browser use, API examples, project structure, and known limitations.
+- [x] Verify a fresh local setup from the README and confirm that the UI/API behavior meets every reduced assignment requirement; commit the verified result.
 
 ## Phase 6 — GitHub, Render, and public verification
 
@@ -60,5 +60,5 @@ This plan covers only the reduced assignment: a Python game engine, Flask REST A
 ## Current blockers / decisions before implementation
 
 - [x] Supply or choose original word-list content for `words/easy.txt`, `words/medium.txt`, and `words/hard.txt`; none is currently present in this project.
-- [ ] Choose the GitHub repository name/visibility and create/sign in to the GitHub account if needed.
+- [x] Choose the GitHub repository name/visibility and create/sign in to the GitHub account if needed.
 - [ ] Choose a Render account/service name and retain the public URL once created.

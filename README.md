@@ -1,45 +1,91 @@
 # Web-Based Hangman
 
-CSE 4095 individual assignment: build and deploy a Hangman game with a Python/Flask server and a browser client.
+CSE 4095 individual assignment: a browser-based Hangman game with a Python/Flask server. The server owns the game rules and hidden word; the browser communicates with it through a JSON REST API.
 
-## Status
+## Requirements
 
-The independent game engine and word lists are complete. The Flask API, browser interface, and deployment will be implemented incrementally according to `TODO.md`.
+- Python 3.10 or newer
+- A modern web browser such as Chrome
 
-## Word lists
+## Local setup
 
-The project includes original, manually selected English word lists: 35 Easy words, 35 Medium words, and 25 Hard words. The lists are lowercase alphabetic text files in `words/`; the application validates and de-duplicates them at load time.
-
-## Run Phase 2 tests
-
-From the project folder, run:
+From the project folder, create and activate a virtual environment, then install the dependencies:
 
 ```powershell
-.\.venv\Scripts\python -m unittest discover -s tests -v
+py -3 -m venv .venv
+.\.venv\Scripts\Activate.ps1
+python -m pip install -r requirements.txt
 ```
 
-## API (Phase 3)
+If PowerShell blocks virtual-environment activation, run the commands below with `.\.venv\Scripts\python` instead of `python`.
 
-The Flask server keeps every game in memory and is the only component that decides game results. Run it locally with:
+## Run locally
+
+Start the Flask development server:
 
 ```powershell
 .\.venv\Scripts\python server.py
 ```
 
-Endpoints accept and return JSON:
+Open http://127.0.0.1:5000/ in a browser. Select a difficulty, choose **New game**, and use the on-screen letter buttons or your physical keyboard. A game ends after the word is guessed or after six incorrect guesses; choose **New game** to restart without reloading the page.
 
-- `POST /api/games` with `{"difficulty": "easy"}`, `medium`, or `hard`
-- `GET /api/games/<game_id>`
-- `POST /api/games/<game_id>/guess` with `{"letter": "a"}`
+## Run tests
 
-While a game is active, responses contain its masked pattern and state but never the hidden word. The word appears only when the game is won or lost.
+```powershell
+.\.venv\Scripts\python -m unittest discover -s tests -v
+```
 
-## Browser client (Phase 4)
+The tests cover game rules, word-list loading, API validation, separate games, win/loss paths, hidden-word protection, and serving the browser interface.
 
-Visit `http://127.0.0.1:5000/` after starting `server.py`. Choose a difficulty, select **New game**, then use the on-screen or physical keyboard. The browser sends every action to the Flask API; it does not contain the active hidden word or independent Hangman rules.
+## REST API
+
+All endpoints accept and return JSON.
+
+| Method | Endpoint | Purpose |
+| --- | --- | --- |
+| `POST` | `/api/games` | Create a game for `easy`, `medium`, or `hard` difficulty. |
+| `GET` | `/api/games/<game_id>` | Retrieve the current state of one game. |
+| `POST` | `/api/games/<game_id>/guess` | Submit one letter guess. |
+
+Create a game:
+
+```json
+{"difficulty": "easy"}
+```
+
+Submit a guess:
+
+```json
+{"letter": "a"}
+```
+
+While a game is `playing`, responses include the pattern, guessed letters, incorrect letters, remaining guesses, and status, but never the hidden word. The `word` field appears only after a win or loss.
+
+## Project structure
+
+```text
+game.py                 # Framework-independent Hangman rules
+word_manager.py         # Validates, loads, and selects words
+server.py               # Flask routes and in-memory game storage
+static/                 # Browser HTML, CSS, and JavaScript
+tests/                  # Unit and API tests
+words/                  # Easy, Medium, and Hard word lists
+requirements.txt        # Python dependencies
+TODO.md                 # Verified, phased assignment plan
+```
+
+## Word lists
+
+The project includes AI-generated English word lists: 35 Easy words, 35 Medium words, and 25 Hard words. The lists are lowercase alphabetic text files in `words/`; the application validates and de-duplicates them at load time.
+
+## Known limitations
+
+- Games are stored only in memory, so server restarts clear active games.
+- The application has no accounts, authentication, database, leaderboard, terminal client, or automated bots; these are outside this assignment's reduced scope.
+- `server.py` runs Flask's development server locally. A production server command will be added for Render deployment.
 
 ## Reference materials
 
 - `Specification.md` is the original, broader specification.
 - `TODO.md` narrows the work to this assignment.
-- `cursor_transcript.md` is instructor guidance only; this project will use an independent implementation.
+- `cursor_transcript.md` is instructor guidance only; this project uses an independent implementation.
