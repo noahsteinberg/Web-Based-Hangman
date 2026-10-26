@@ -84,6 +84,23 @@ The project includes AI-generated English word lists: 35 Easy words, 35 Medium w
 - The application has no accounts, authentication, database, leaderboard, terminal client, or automated bots; these are outside this assignment's reduced scope.
 - `server.py` runs Flask's development server locally. A production server command will be added for Render deployment.
 
+## Render deployment
+
+The repository includes `render.yaml` for a Python Web Service. Its preliminary service name is `noah-web-based-hangman`; change it before creating the Render service if you prefer a different available `onrender.com` URL.
+
+Render will use:
+
+| Setting | Value |
+| --- | --- |
+| Build command | `pip install -r requirements.txt` |
+| Start command | `gunicorn --bind 0.0.0.0:$PORT --workers 1 server:app` |
+| Health-check path | `/` |
+| Environment variables | None required |
+
+The single Gunicorn worker is intentional. Active games are stored only in this application's memory; multiple workers would have separate memory and could receive different requests for the same game, causing inconsistent or missing game state. A single worker keeps every request for this small assignment application in one process. Server restarts still clear active games.
+
+To deploy, create a Render **Web Service**, connect the `main` branch of this repository, review the generated settings, choose the final service name/region/plan, and create the service. Do not commit credentials or add secrets for this application.
+
 ## Reference materials
 
 - `Specification.md` is the original, broader specification.
