@@ -44,11 +44,11 @@ This plan covers only the reduced assignment: a Python game engine, Flask REST A
 
 ## Phase 6 — GitHub, Render, and public verification
 
-- [ ] Push all verified commits to GitHub; confirm the repository includes code, `words/`, tests, `requirements.txt`, deployment configuration, `README.md`, `Specification.md`, and this `TODO.md`—but no credentials.
-- [ ] Add deployment configuration after `server.py` is implemented and the Render start command is verified.
-- [ ] Deploy the Flask application to Render with a production start command matching `server.py` (for example, Gunicorn); configure Render only through its dashboard/repository integration and do not commit secrets.
-- [ ] Verify the public HTTPS URL serves the browser UI and the required API endpoints.
-- [ ] Play a complete win or loss on the public site, start another game, and confirm the deployed app works independently of the local server; commit deployment-config/documentation changes after verification.
+- [x] Push all verified commits to GitHub; confirm the repository includes code, `words/`, tests, `requirements.txt`, deployment configuration, `README.md`, `Specification.md`, and this `TODO.md`—but no credentials.
+- [x] Add deployment configuration after `server.py` is implemented and the Render start command is verified.
+- [x] Deploy the Flask application to Render with a production start command matching `server.py` (for example, Gunicorn); configure Render only through its dashboard/repository integration and do not commit secrets.
+- [x] Verify the public HTTPS URL serves the browser UI and the required API endpoints.
+- [x] Play a complete win or loss on the public site, start another game, and confirm the deployed app works independently of the local server; commit deployment-config/documentation changes after verification.
 
 ## Phase 7 — Submission package
 
@@ -61,4 +61,4 @@ This plan covers only the reduced assignment: a Python game engine, Flask REST A
 
 - [x] Supply or choose original word-list content for `words/easy.txt`, `words/medium.txt`, and `words/hard.txt`; none is currently present in this project.
 - [x] Choose the GitHub repository name/visibility and create/sign in to the GitHub account if needed.
-- [ ] Choose a Render account/service name and retain the public URL once created.
+- [x] Choose a Render account/service name and retain the public URL once created.

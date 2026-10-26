@@ -88,6 +88,8 @@ The project includes AI-generated English word lists: 35 Easy words, 35 Medium w
 
 The repository includes `render.yaml` for a Python Web Service. Its preliminary service name is `noah-web-based-hangman`; change it before creating the Render service if you prefer a different available `onrender.com` URL.
 
+The deployed application is available at [https://noah-steinberg-web-based-hangman.onrender.com](https://noah-steinberg-web-based-hangman.onrender.com).
+
 Render will use:
 
 | Setting | Value |
