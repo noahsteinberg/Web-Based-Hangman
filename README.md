@@ -18,6 +18,22 @@ From the project folder, run:
 .\.venv\Scripts\python -m unittest discover -s tests -v
 ```
 
+## API (Phase 3)
+
+The Flask server keeps every game in memory and is the only component that decides game results. Run it locally with:
+
+```powershell
+.\.venv\Scripts\python server.py
+```
+
+Endpoints accept and return JSON:
+
+- `POST /api/games` with `{"difficulty": "easy"}`, `medium`, or `hard`
+- `GET /api/games/<game_id>`
+- `POST /api/games/<game_id>/guess` with `{"letter": "a"}`
+
+While a game is active, responses contain its masked pattern and state but never the hidden word. The word appears only when the game is won or lost.
+
 ## Reference materials
 
 - `Specification.md` is the original, broader specification.

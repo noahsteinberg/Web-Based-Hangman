@@ -20,12 +20,12 @@ This plan covers only the reduced assignment: a Python game engine, Flask REST A
 
 ## Phase 3 — Flask API
 
-- [ ] Implement `server.py` using Flask with in-memory, separate game states and unique IDs.
-- [ ] Implement JSON endpoints: `POST /api/games`, `GET /api/games/<game_id>`, and `POST /api/games/<game_id>/guess`.
-- [ ] Validate JSON bodies, difficulty, guesses, and unknown IDs; return appropriate status codes and consistent JSON errors/state.
-- [ ] Ensure active responses never disclose the word and the API, not the browser, decides game outcomes.
-- [ ] Add and run `tests/test_api.py` for the three difficulty levels, multiple games, correct/incorrect/repeated/invalid guesses, win/loss, malformed requests, missing IDs, and hidden-word protection.
-- [ ] Manually exercise the API locally and inspect representative JSON; commit only after tests and manual checks pass.
+- [x] Implement `server.py` using Flask with in-memory, separate game states and unique IDs.
+- [x] Implement JSON endpoints: `POST /api/games`, `GET /api/games/<game_id>`, and `POST /api/games/<game_id>/guess`.
+- [x] Validate JSON bodies, difficulty, guesses, and unknown IDs; return appropriate status codes and consistent JSON errors/state.
+- [x] Ensure active responses never disclose the word and the API, not the browser, decides game outcomes.
+- [x] Add and run `tests/test_api.py` for the three difficulty levels, multiple games, correct/incorrect/repeated/invalid guesses, win/loss, malformed requests, missing IDs, and hidden-word protection.
+- [x] Manually exercise the API locally and inspect representative JSON; commit only after tests and manual checks pass.
 
 ## Phase 4 — Browser interface
 
