@@ -29,12 +29,12 @@ This plan covers only the reduced assignment: a Python game engine, Flask REST A
 
 ## Phase 4 — Browser interface
 
-- [ ] Add `static/index.html`, `static/style.css`, and `static/app.js`, served by `server.py`.
-- [ ] Build a simple interface with a difficulty selector, New Game/restart flow, word pattern, guessed letters, remaining guesses, end message, and a hangman drawing that changes after wrong guesses.
-- [ ] Support on-screen letter buttons and keyboard input; disable already guessed letters and prevent input once a game ends.
-- [ ] Use `fetch()` exclusively for game actions; do not store or derive the hidden word in browser JavaScript.
-- [ ] Check locally in Chrome: start each difficulty, make correct/incorrect/repeated guesses, complete a win and a loss, and start another game without reloading.
-- [ ] In Chrome DevTools Network, inspect a guess request and its JSON response, then confirm the page updates from that response; commit only after these checks pass.
+- [x] Add `static/index.html`, `static/style.css`, and `static/app.js`, served by `server.py`.
+- [x] Build a simple interface with a difficulty selector, New Game/restart flow, word pattern, guessed letters, remaining guesses, end message, and a hangman drawing that changes after wrong guesses.
+- [x] Support on-screen letter buttons and keyboard input; disable already guessed letters and prevent input once a game ends.
+- [x] Use `fetch()` exclusively for game actions; do not store or derive the hidden word in browser JavaScript.
+- [x] Check locally in Chrome: start each difficulty, make correct/incorrect/repeated guesses, complete a win and a loss, and start another game without reloading.
+- [x] In Chrome DevTools Network, inspect a guess request and its JSON response, then confirm the page updates from that response; commit only after these checks pass.
 
 ## Phase 5 — Complete testing and documentation
 

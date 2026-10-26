@@ -34,6 +34,10 @@ Endpoints accept and return JSON:
 
 While a game is active, responses contain its masked pattern and state but never the hidden word. The word appears only when the game is won or lost.
 
+## Browser client (Phase 4)
+
+Visit `http://127.0.0.1:5000/` after starting `server.py`. Choose a difficulty, select **New game**, then use the on-screen or physical keyboard. The browser sends every action to the Flask API; it does not contain the active hidden word or independent Hangman rules.
+
 ## Reference materials
 
 - `Specification.md` is the original, broader specification.

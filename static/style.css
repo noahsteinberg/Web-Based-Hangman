@@ -1,0 +1,25 @@
+:root { color: #1f2937; background: #f3f4f6; font-family: Inter, ui-sans-serif, system-ui, sans-serif; }
+* { box-sizing: border-box; }
+body { margin: 0; min-width: 320px; }
+button, select { font: inherit; }
+.game-shell { position: relative; width: min(760px, calc(100% - 32px)); margin: 36px auto; padding: 32px; background: #fff; border: 1px solid #e5e7eb; border-radius: 18px; box-shadow: 0 12px 30px rgb(31 41 55 / 8%); }
+.student-name { position: absolute; top: 18px; right: 22px; margin: 0; color: #64748b; font-size: .85rem; font-weight: 600; }
+header { text-align: center; }
+.eyebrow { margin: 0; color: #2563eb; font-size: .78rem; font-weight: 700; letter-spacing: .12em; }
+h1 { margin: 4px 0; font-size: clamp(2rem, 6vw, 3rem); }
+.subtitle { margin: 0 0 28px; color: #6b7280; }
+.controls { display: flex; align-items: center; justify-content: center; gap: 10px; flex-wrap: wrap; margin-bottom: 28px; }
+.controls label { font-weight: 700; }
+select, button { border-radius: 8px; padding: 9px 12px; border: 1px solid #cbd5e1; background: #fff; }
+#new-game { border-color: #2563eb; background: #2563eb; color: #fff; font-weight: 700; cursor: pointer; }
+#new-game:hover { background: #1d4ed8; }
+.game-board { display: grid; grid-template-columns: minmax(180px, .8fr) minmax(240px, 1.2fr); gap: 28px; align-items: center; padding: 24px 0; border-top: 1px solid #e5e7eb; border-bottom: 1px solid #e5e7eb; }
+.hangman { display: block; width: 100%; max-height: 245px; stroke: #334155; stroke-width: 7; stroke-linecap: round; fill: none; }
+.gallows { stroke: #94a3b8; }
+.figure { opacity: 0; transition: opacity .15s ease; }
+.drawing-panel[data-wrong="1"] .part-1, .drawing-panel[data-wrong="2"] .part-1, .drawing-panel[data-wrong="3"] .part-1, .drawing-panel[data-wrong="4"] .part-1, .drawing-panel[data-wrong="5"] .part-1, .drawing-panel[data-wrong="6"] .part-1, .drawing-panel[data-wrong="2"] .part-2, .drawing-panel[data-wrong="3"] .part-2, .drawing-panel[data-wrong="4"] .part-2, .drawing-panel[data-wrong="5"] .part-2, .drawing-panel[data-wrong="6"] .part-2, .drawing-panel[data-wrong="3"] .part-3, .drawing-panel[data-wrong="4"] .part-3, .drawing-panel[data-wrong="5"] .part-3, .drawing-panel[data-wrong="6"] .part-3, .drawing-panel[data-wrong="4"] .part-4, .drawing-panel[data-wrong="5"] .part-4, .drawing-panel[data-wrong="6"] .part-4, .drawing-panel[data-wrong="5"] .part-5, .drawing-panel[data-wrong="6"] .part-5, .drawing-panel[data-wrong="6"] .part-6 { opacity: 1; }
+.message { min-height: 1.5em; margin: 0; color: #4b5563; font-weight: 600; }.message.error { color: #b91c1c; }
+.word-pattern { margin: 22px 0; font-family: ui-monospace, Consolas, monospace; font-size: clamp(1.5rem, 5vw, 2.25rem); font-weight: 700; letter-spacing: .08em; overflow-wrap: anywhere; }
+.game-facts { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }.game-facts p { margin: 0; padding: 12px; border-radius: 8px; background: #f8fafc; }.game-facts span, .game-facts strong { display: block; }.game-facts span { color: #64748b; font-size: .8rem; }.game-facts strong { margin-top: 4px; min-height: 1.25em; }
+.keyboard { display: flex; justify-content: center; flex-wrap: wrap; gap: 7px; margin-top: 26px; }.key { width: 38px; min-height: 40px; padding: 6px; font-weight: 700; cursor: pointer; }.key:hover:not(:disabled) { border-color: #2563eb; color: #1d4ed8; }.key:disabled { color: #94a3b8; background: #f1f5f9; cursor: not-allowed; }.keyboard-hint { margin: 12px 0 0; color: #64748b; text-align: center; font-size: .9rem; }
+@media (max-width: 600px) { .game-shell { width: min(100% - 20px, 760px); margin: 10px auto; padding: 36px 16px 22px; }.student-name { top: 13px; right: 16px; }.game-board { grid-template-columns: 1fr; gap: 12px; }.drawing-panel { width: min(190px, 100%); margin: auto; } }

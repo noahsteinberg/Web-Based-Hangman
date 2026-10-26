@@ -25,6 +25,10 @@ def create_app(word_manager: WordManager | None = None) -> Flask:
             return None, error_response("Game not found.", 404)
         return game, None
 
+    @app.get("/")
+    def index():
+        return app.send_static_file("index.html")
+
     @app.post("/api/games")
     def create_game():
         body = request.get_json(silent=True)

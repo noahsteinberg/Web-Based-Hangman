@@ -38,6 +38,13 @@ class HangmanApiTests(unittest.TestCase):
                 self.assertNotIn("word", data)
                 self.assertTrue(data["game_id"])
 
+    def test_root_serves_browser_interface(self):
+        response = self.client.get("/")
+        self.assertEqual(200, response.status_code)
+        self.assertIn(b"<title>Hangman</title>", response.data)
+        self.assertIn(b"Noah Steinberg", response.data)
+        response.close()
+
     def test_separate_games_keep_separate_state(self):
         first = self.create_game("easy")
         second = self.create_game("medium")

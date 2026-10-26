@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hangman</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <main class="game-shell">
+    <p class="student-name">Noah Steinberg</p>
+    <header>
+      <p class="eyebrow">CSE 4095</p>
+      <h1>Hangman</h1>
+      <p class="subtitle">Guess the word before the drawing is complete.</p>
+    </header>
+    <section class="controls" aria-label="New game controls">
+      <label for="difficulty">Difficulty</label>
+      <select id="difficulty" name="difficulty">
+        <option value="easy">Easy</option><option value="medium">Medium</option><option value="hard">Hard</option>
+      </select>
+      <button id="new-game" type="button">New game</button>
+    </section>
+    <section class="game-board" aria-live="polite">
+      <div class="drawing-panel" aria-label="Hangman drawing">
+        <svg class="hangman" viewBox="0 0 220 250" role="img" aria-label="Hangman progress">
+          <path class="gallows" d="M25 230H195M65 230V25M65 25H155M155 25V55" />
+          <circle class="figure part-1" cx="155" cy="78" r="22" /><path class="figure part-2" d="M155 100V155" />
+          <path class="figure part-3" d="M155 115L125 140" /><path class="figure part-4" d="M155 115L185 140" />
+          <path class="figure part-5" d="M155 155L128 195" /><path class="figure part-6" d="M155 155L182 195" />
+        </svg>
+      </div>
+      <div class="status-panel">
+        <p id="message" class="message">Choose a difficulty and start a new game.</p>
+        <p id="word-pattern" class="word-pattern" aria-label="Word pattern">—</p>
+        <div class="game-facts">
+          <p><span>Remaining guesses</span><strong id="remaining-guesses">—</strong></p>
+          <p><span>Guessed letters</span><strong id="guessed-letters">—</strong></p>
+        </div>
+      </div>
+    </section>
+    <section aria-label="Letter keyboard"><div id="keyboard" class="keyboard"></div><p class="keyboard-hint">You can also use your physical keyboard.</p></section>
+  </main>
+  <script src="/static/app.js"></script>
+</body>
+</html>
